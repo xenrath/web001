@@ -1,3 +1,9 @@
+<?php 
+  require_once('config/koneksi.php');
+  require_once('models/database.php');
+
+  $connection = new Database($host, $user, $pass, $database);
+ ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,8 +47,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> Barang <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="?page=barang">Data Barang</a></li>
-                <li><a href="#">Grafik</a></li>
-                <li><a href="#">Report</a></li>
+                <li><a href="?page=grafik">Grafik</a></li>
+                <li><a href="?page=report">Report</a></li>
               </ul>
             </li>
           </ul>
