@@ -18,5 +18,19 @@
 			$query = $db->query($sql) or die ($db->error);
 			return $query;
 		}
+
+		public function tambah($nm_brg, $hrg_brg, $stok_brg, $gbr_brg)
+		{
+			$db = $this->mysqli->conn;
+			$sql = "INSERT INTO tb_barang (nama_brg, harga_brg, stok_brg, gbr_brg) VALUES ('$nm_brg', '$hrg_brg', '$stok_brg', '$gbr_brg')";
+			$db->query($sql) or die ($db->error);
+		}
+
+		public function edit($sql)
+		{
+			$db = $this->mysqli->conn;
+			$db->query($sql) or die ($db->error);
+		}
+
 	}
  ?>

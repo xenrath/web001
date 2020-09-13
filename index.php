@@ -1,4 +1,6 @@
 <?php 
+  ob_start();
+
   require_once('config/koneksi.php');
   require_once('models/database.php');
 
@@ -7,12 +9,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Xenrath</title>
+    <title>Data Barang</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
