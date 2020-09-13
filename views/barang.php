@@ -63,7 +63,10 @@
 			</table>
 		</div>
 		
-		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambah">Tambah</button>
+		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah</button>
+		<a href="./report/export_excel_barang.php" target="_blank">
+			<button type="button" class="btn btn-default"><i class="fa fa-print"></i> Export Excel</button>
+		</a>
 		
 		<div id="tambah" class="modal fade" role="dialog">
 			<div class="modal-dialog">
@@ -128,23 +131,23 @@
 						<div class="modal-body" name="id_brg" id="modal-edit">
 							<div class="form-group">
 								<label class="control-label" for="nm_brg">Nama Barang</label>
-								<input type="hidden" name="id_brg" id="id_brg">
-								<input type="text" name="nm_brg" class="form-control" id="nm_brg" required>
+								<input type="hidden" name="id_brg" id="id_brg_e">
+								<input type="text" name="nm_brg" class="form-control" id="nm_brg_e" required>
 							</div>
 							<div class="form-group">
 								<label class="control-label" for="hrg_brg">Harga Barang</label>
-								<input type="number" name="hrg_brg" class="form-control" id="hrg_brg" required>
+								<input type="number" name="hrg_brg" class="form-control" id="hrg_brg_e" required>
 							</div>
 							<div class="form-group">
 								<label class="control-label" for="stok_brg">Stok Barang</label>
-								<input type="number" name="stok_brg" class="form-control" id="stok_brg" required>
+								<input type="number" name="stok_brg" class="form-control" id="stok_brg_e" required>
 							</div>
 							<div class="form-group">
 								<label class="control-label" for="gbr_brg">Gambar Barang</label>
 								<div style="padding-bottom: 5px">
 									<img src="" width="80px" id="pict">
 								</div>
-								<input type="file" name="gbr_brg" class="form-control" id="gbr_brg">
+								<input type="file" name="gbr_brg" class="form-control">
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -164,10 +167,10 @@
 				var hrgbrg = $(this).data('harga');
 				var stokbrg = $(this).data('stok');
 				var gbrbrg = $(this).data('gbr');
-				$("#modal-edit #id_brg").val(idbrg);
-				$("#modal-edit #nm_brg").val(nmbrg);
-				$("#modal-edit #hrg_brg").val(hrgbrg);
-				$("#modal-edit #stok_brg").val(stokbrg);
+				$("#modal-edit #id_brg_e").val(idbrg);
+				$("#modal-edit #nm_brg_e").val(nmbrg);
+				$("#modal-edit #hrg_brg_e").val(hrgbrg);
+				$("#modal-edit #stok_brg_e").val(stokbrg);
 				$("#modal-edit #pict").attr("src", "assets/img/barang/"+gbrbrg);
 			});
 
