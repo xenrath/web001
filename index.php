@@ -15,6 +15,9 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
 
+    <!-- dataTables -->
+    <link href="assets/dataTables/datatables.min.css" rel="stylesheet">
+
     <!-- Add custom CSS here -->
     <link href="assets/css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
@@ -81,6 +84,15 @@
     <!-- JavaScript -->
     <script src="assets/js/jquery-1.10.2.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+
+    <!-- dataTables -->
+    <script src="assets/dataTables/datatables.min.js"></script>
+    <script>
+      $(document).ready(function()
+      {
+        $('#dataTables').DataTable();
+      });
+    </script>
 
   </body>
 </html>

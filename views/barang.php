@@ -18,43 +18,47 @@
 <div class="row">
 	<div class="col-lg-12">
 		<div class="table-responsive">
-			<table class="table table-bordered table-hover table-striped">
-				<tr>
-					<th>No.</th>
-					<th>Nama Barang</th>
-					<th>Harga Barang</th>
-					<th>Stok Barang</th>
-					<th>Gambar Barang</th>
-					<th>Opsi</th>
-				</tr>
-				<?php 
-					$no = 1;
-					$tampil = $brg->tampil();
-					while($data = $tampil->fetch_object()){
-				 ?>
-				<tr>
-					<td align="center"><?php echo $no++."." ?></td>
-					<td><?php echo $data->nama_brg ?></td>
-					<td><?php echo $data->harga_brg ?></td>
-					<td><?php echo $data->stok_brg ?></td>
-					<td align="center">
-						<img src="assets/img/barang/<?php echo $data->gbr_brg; ?>" width="70px">
-					</td>
-					<td align="center">
-						<a id="edit_brg" data-toggle="modal" data-target="#edit" 
-							data-id="<?php echo $data->id_brg; ?>"
-							data-nama="<?php echo $data->nama_brg; ?>"
-							data-harga="<?php echo $data->harga_brg; ?>"
-							data-stok="<?php echo $data->stok_brg; ?>"
-							data-gbr="<?php echo $data->gbr_brg; ?>"
-						>
-							<button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
-						</a>
-						<a href="?page=barang&act=del&id=<?php echo $data->id_brg; ?>" onclick="return confirm('Yakin akan menghapus data ini?')">
-							<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus</button>
-						</a>
-					</td>
-				</tr>
+			<table class="table table-bordered table-hover table-striped" id="dataTables">
+				<thead>
+					<tr>
+						<th>No.</th>
+						<th>Nama Barang</th>
+						<th>Harga Barang</th>
+						<th>Stok Barang</th>
+						<th>Gambar Barang</th>
+						<th>Opsi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+						$no = 1;
+						$tampil = $brg->tampil();
+						while($data = $tampil->fetch_object()){
+					 ?>
+					<tr>
+						<td align="center"><?php echo $no++."." ?></td>
+						<td><?php echo $data->nama_brg ?></td>
+						<td><?php echo $data->harga_brg ?></td>
+						<td><?php echo $data->stok_brg ?></td>
+						<td align="center">
+							<img src="assets/img/barang/<?php echo $data->gbr_brg; ?>" width="70px">
+						</td>
+						<td align="center">
+							<a id="edit_brg" data-toggle="modal" data-target="#edit" 
+								data-id="<?php echo $data->id_brg; ?>"
+								data-nama="<?php echo $data->nama_brg; ?>"
+								data-harga="<?php echo $data->harga_brg; ?>"
+								data-stok="<?php echo $data->stok_brg; ?>"
+								data-gbr="<?php echo $data->gbr_brg; ?>"
+							>
+								<button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
+							</a>
+							<a href="?page=barang&act=del&id=<?php echo $data->id_brg; ?>" onclick="return confirm('Yakin akan menghapus data ini?')">
+								<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
 			<?php } ?>
 			</table>
 		</div>
