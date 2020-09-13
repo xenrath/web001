@@ -2,6 +2,8 @@
 	include "models/m_barang.php";
 
 	$brg = new Barang($connection);
+
+	if (@$_GET['act'] == '') {
  ?>
 
 <div class="row">
@@ -48,7 +50,9 @@
 						>
 							<button class="btn btn-info btn-xs"><i class="fa fa-edit"></i> Edit</button>
 						</a>
-						<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus</button>
+						<a href="?page=barang&act=del&id=<?php echo $data->id_brg; ?>" onclick="return confirm('Yakin akan menghapus data ini?')">
+							<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus</button>
+						</a>
 					</td>
 				</tr>
 			<?php } ?>
@@ -186,3 +190,12 @@
 
 	</div>
 </div>
+<?php 
+	}else if (@$_GET['act'] == 'del') {
+		$gbr_awal = $brg->tampil($_GET['id'])->fetch_object()->gbr_brg;
+		unlink("assets/img/barang/".$gbr_awal);
+
+		$brg->hapus($_GET['id']);
+		header("location: ?page=barang");
+	} 
+?>

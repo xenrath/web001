@@ -32,5 +32,17 @@
 			$db->query($sql) or die ($db->error);
 		}
 
+		public function hapus($id)
+		{
+			$db = $this->mysqli->conn;
+			$sql = "DELETE FROM tb_barang WHERE id_brg = '$id'";
+			$db->query($sql) or die ($db->error);
+		}
+
+		function __destruct(){
+			$db = $this->mysqli->conn;
+			$db->close();
+		}
+
 	}
  ?>
