@@ -49,7 +49,6 @@
               <ul class="dropdown-menu">
                 <li><a href="?page=barang">Data Barang</a></li>
                 <li><a href="?page=grafik">Grafik</a></li>
-                <li><a href="?page=report">Report</a></li>
               </ul>
             </li>
           </ul>
@@ -69,6 +68,8 @@
         </div><!-- /.navbar-collapse -->
       </nav>
 
+      <script src="assets/js/jquery-1.10.2.js"></script>
+
       <div id="page-wrapper">
         <?php 
           if (@$_GET['page'] == 'dashboard' || @$_GET['page'] == '') {
@@ -82,7 +83,6 @@
     </div><!-- /#wrapper -->
 
     <!-- JavaScript -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
     <script src="assets/js/bootstrap.js"></script>
 
     <!-- dataTables -->
