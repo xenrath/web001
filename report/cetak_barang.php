@@ -11,7 +11,9 @@
 	$content = '
 		<style>
 			.tabel{ border-collapse:collapse; }
-			.tabel th { padding: 8px 5px; background-color:#f60; color:#fff;}
+			.tabel th { padding: 8px 5px; background-color:#f60; color:#fff; }
+			.tabel td { padding: 3px; }
+			img { width: 70px; }
 		</style>
 	';
 
@@ -29,6 +31,7 @@
 					<th>Nama Barang</th>
 					<th>Harga Barang</th>
 					<th>Stok Barang</th>
+					<th align="center">Gambar Barang</th>
 				</tr>
 	';
 
@@ -41,6 +44,7 @@
 				<td>'.$data->nama_brg.'</td>
 				<td>Rp. '.number_format($data->harga_brg, 2, ",", ".").'</td>
 				<td>'.$data->stok_brg.'</td>
+				<td><img src="../assets/img/barang/'.$data->gbr_brg.'"></td>
 			</tr>
 	';
 	

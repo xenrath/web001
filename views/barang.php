@@ -39,7 +39,7 @@
 					<tr>
 						<td align="center"><?php echo $no++."." ?></td>
 						<td><?php echo $data->nama_brg ?></td>
-						<td><?php echo $data->harga_brg ?></td>
+						<td>Rp. <?php echo number_format($data->harga_brg, 2, ', ', '.') ?></td>
 						<td><?php echo $data->stok_brg ?></td>
 						<td align="center">
 							<img src="assets/img/barang/<?php echo $data->gbr_brg; ?>" width="70px">
