@@ -6,7 +6,43 @@
 				<h4 class="modal-title">Cetak PDF Data Barang</h4>
 			</div>
 			<div class="modal-body">
-				Cetak Per Periode
+				<form action="./report/cetak_barang.php" method="post" target="_blank">
+					<table>
+						<tr>
+							<td>
+								<div class="form-group">Dari Tanggal</div>
+							</td>
+							<td align="center" width="5%">
+								<div class="form-group">:</div>
+							</td>
+							<td>
+								<div class="form-group">
+									<input type="date" name="tgl_a" class="form-control" required>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="form-group">Sampai Tanggal</div>
+							</td>
+							<td align="center" width="5%">
+								<div class="form-group">:</div>
+							</td>
+							<td>
+								<div class="form-group">
+									<input type="date" name="tgl_b" class="form-control" required>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>
+								<input type="submit" name="cetak_barang" class="btn btn-primary btn-sm" value="Cetak">
+							</td>
+						</tr>
+					</table>
+				</form>
 			</div>
 			<div class="modal-footer">
 				<a href="./report/cetak_barang.php" target="_blank" class="btn btn-primary btn-sm">Cetak Semua Data</a>

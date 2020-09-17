@@ -39,7 +39,11 @@
 	if (@$_GET['id'] != '') {
 		$tampil = $brg->tampil(@$_GET['id']);	
 	}else{
-		$tampil = $brg->tampil();
+		if (@$_POST['cetak_barang']) {
+			$tampil = $brg->tampil_tgl(@$_POST['tgl_a'], @$_POST['tgl_b']);	
+		}else{
+			$tampil = $brg->tampil();
+		}
 	}
 	while ($data = $tampil->fetch_object()) {
 		$content .= '
@@ -61,5 +65,5 @@
 
 	$html2pdf = new Html2Pdf('P', 'A4', 'en');
 	$html2pdf->writeHTML($content);
-	$html2pdf->output('example.pdf');
+	$html2pdf->output('laporan-barang.pdf');
  ?>

@@ -30,7 +30,7 @@
 				</div>
 			</form>
 			<?php 
-				if (isset($_POST['tambah'])) {
+				if (@$_POST['tambah']) {
 					$nm_brg = $_POST['nm_brg'];
 					$hrg_brg = $_POST['hrg_brg'];
 					$stok_brg = $_POST['stok_brg'];

@@ -27,6 +27,7 @@
 						<th>Harga Barang</th>
 						<th>Stok Barang</th>
 						<th>Gambar Barang</th>
+						<th>Tanggal Publish</th>
 						<th>Opsi</th>
 					</tr>
 				</thead>
@@ -44,6 +45,7 @@
 						<td align="center">
 							<img src="assets/img/barang/<?php echo $data->gbr_brg; ?>" width="70px">
 						</td>
+						<td><?php echo date('d F Y', strtotime($data->tgl_publish)); ?></td>
 						<td align="center">
 							<a id="edit_brg" data-toggle="modal" data-target="#edit" 
 								data-id="<?php echo $data->id_brg; ?>"
@@ -67,11 +69,11 @@
 			</table>
 		</div>
 		
-		<a class="btn btn-success" data-toggle="modal" data-target="#tambah"><i class="fa fa-plus"></i> Tambah</a>
+		<a class="btn btn-success" data-toggle="modal" data-target="#tambah" style="margin-bottom: 5px;"><i class="fa fa-plus"></i> Tambah</a>
 		<a href="./report/export_excel_barang.php" target="_blank">
-			<button type="button" class="btn btn-default"><i class="fa fa-print"></i> Export Excel</button>
+			<button type="button" class="btn btn-default" style="margin-bottom: 5px;"><i class="fa fa-print"></i> Export Excel</button>
 		</a>
-		<a class="btn btn-default" data-toggle="modal" data-target="#cetakpdf"><i class="fa fa-print"></i> Cetak PDF</a>
+		<a class="btn btn-default" data-toggle="modal" data-target="#cetakpdf" style="margin-bottom: 5px;"><i class="fa fa-print"></i> Cetak PDF</a>
 
 		<?php 
 			include "modal_brg_add.php";
