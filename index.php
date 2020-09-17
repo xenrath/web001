@@ -48,7 +48,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i> Barang <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="?page=barang">Data Barang</a></li>
-                <li><a href="?page=grafik">Grafik</a></li>
+                <li><a href="?page=barang_grafik">Grafik</a></li>
               </ul>
             </li>
           </ul>
@@ -76,6 +76,8 @@
             include "views/dashboard.php";
           }else if (@$_GET['page'] == 'barang') {
             include "views/barang.php";
+          }else if (@$_GET['page'] == 'barang_grafik') {
+            include "views/barang_grafik.php";
           }
          ?>
       </div><!-- /#page-wrapper -->
